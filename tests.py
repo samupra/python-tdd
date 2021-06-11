@@ -107,6 +107,13 @@ class Tests(unittest.TestCase):
         actual = main.greet(names)
         self.assertEqual(expectation, actual)
 
+        # Expectation of Mixed Uppercase missing
+        names = ["Amy", "BRIAN", "SAM", "Charlotte"]
+        expectation = "Hello, Amy and Charlotte. HELLO BRIAN! AND SAM!"
+
+        actual = main.greet(names)
+        self.assertEqual(expectation, actual)
+
     """
       | If any entries in name are a string containing a comma, split it as its own input. 
       | For example, when name is ["Bob", "Charlie, Dianne"], 

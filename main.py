@@ -39,10 +39,10 @@ def build_upper_case_greeting(prefix, names):
     if len(names) == 0:
         return ""
     if len(names) > 1:
-        string = "HELLO "
+        string = " HELLO "
         for i in range(0, len(names) - 1):
             string += names[i] + "!"
-        string += "AND"
+        string += " AND "
         string += names[len(names) - 1]
         string += "!"
         return string
