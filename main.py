@@ -54,7 +54,7 @@ def handle_arbitary_elements(names):
     upper_case = filter(upper_case_names, names)
 
     # Handle special case where only one element in upper case array, and normal case exists
-    if len(normal_case) > 1 and len(upper_case) == 1:
+    if len(normal_case) >= 1 and len(upper_case) == 1:
         prefix = " AND "
     else:
         prefix = ""
