@@ -62,7 +62,7 @@ def handle_arbitary_elements(names):
     return build_normal_case_greeting(normal_case) + build_upper_case_greeting(prefix, upper_case)
 
 
-def handle_commas_in_string(names):
+def handle_commas_and_escaped_strings(names):
     split_strings = []
     for name in names:
         if '"' in name:
@@ -73,6 +73,7 @@ def handle_commas_in_string(names):
             split_strings.extend(name_without_space.split(","))
     return split_strings
 
+
 def greet(name):
     if name is None:
         return "Hello, my friend."
@@ -81,7 +82,7 @@ def greet(name):
         return handle_single_greeting(name)
 
     if isinstance(name, list):
-        extracted_names = handle_commas_in_string(name)
+        extracted_names = handle_commas_and_escaped_strings(name)
         if len(extracted_names) == 2:
             return handle_two_elements(extracted_names)
         else:
